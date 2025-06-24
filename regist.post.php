@@ -38,9 +38,9 @@ db_insert("insert into tbl_member (login_id, login_pw, nickname) values (:login_
         'nickname' => $nickname
     )
 );
+// 알람 출력 후 로그인 페이지로 이동
 echo "<script>
-        alert('회원가입 되었습니다');
-    </script>";
-
-// 로그인 페이지로 이동
-header("Location: /php/community/login.php");
+alert('회원가입 되었습니다');
+location.href = '/php/community/login.php';
+</script>";
+exit();
