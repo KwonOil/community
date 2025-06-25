@@ -11,6 +11,7 @@
     ?>
     <a href="/php/community/regist.php">회원가입</a>
     <a href="/php/community/login.php">로그인</a>
+    
     <?php
     // 로그인이 되어 있다면
     }else{
@@ -18,8 +19,9 @@
         $result = db_select($query, [$member_id]);
 
         $nickname = $result[0]['nickname'];
-        echo "닉네임 : ".htmlspecialchars($nickname);
+        echo htmlspecialchars($nickname);
     ?>
+    <a href="/php/community/myinfo.php">내 정보</a>
     <a href="/php/community/logout.php">로그아웃</a>
     <?php
     }

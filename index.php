@@ -11,10 +11,10 @@ if (isset($_SESSION['member_id'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>php-board 메인</title>
+        <title>메인 페이지</title>
     </head>
     <body>
         <?php require_once("header.php"); ?>
-        <h1>php-board 첫 페이지</h1>
+        <h1>첫 페이지</h1>
     </body>
 </html>

@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $post_data = db_select($query, [$post_id, $member_id]);
 
     if (!$post_data || count($post_data) === 0) {
-        echo "존재하지 않는 글이거나 권한이 없습니다.";
+        echo "<script>alert('존재하지 않는 글이거나 권한이 없습니다.'); history.back();</script>";
         exit();
     }
 

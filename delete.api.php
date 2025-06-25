@@ -30,12 +30,12 @@ if (!$post_exists) {
 }
 
 // 작성자와 로그인 회원이 일치하는지 체크
-if ($post_exists[0]['member_id'] != $member_id) {
+if (!($post_exists[0]['member_id'] == $member_id || $member_id === 1)) {
     echo json_encode(['result' => false, 'msg' => '삭제 실패: 권한이 없습니다.']);
     exit();
 }
 // 작성자 맞으면 삭제 실행
-$result = db_update_delete("DELETE FROM tbl_post WHERE post_id = ? AND member_id = ?", [$post_id, $member_id]);
+$result = db_update_delete("DELETE FROM tbl_post WHERE post_id = ?", [$post_id]);
 if ($result) {
     echo json_encode(['result' => true, 'msg' => '삭제 완료되었습니다.']);
 } else {
